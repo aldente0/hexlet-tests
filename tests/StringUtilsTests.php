@@ -1,5 +1,7 @@
 <?php
 
+use Webmozart\Assert\Assert;
+
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
 if (file_exists($autoloadPath1)) {
@@ -8,12 +10,7 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-if (StringUtils\capitalize('hello') !== 'Hello') {
-    throw new \Exception('Функция работает неверно!');
-}
-
-if (StringUtils\capitalize('') !== '') {
-    throw new \Exception('Функция работает неверно!');
-}
+Assert::Eq(StringUtils\capitalize('hello'), 'Hello');
+Assert::Eq(StringUtils\capitalize(''), '');
 
 echo 'Все тесты пройдены!';

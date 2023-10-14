@@ -12,5 +12,7 @@
             "email": "leha.lozhkin.02@mail.ru"
         }
     ],
-    "require": {}
+    "require": {
+        "webmozart/assert": "^1.11"
+    }
 }
